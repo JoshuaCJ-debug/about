@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | BCVS</title>
+    <style>
+        :root {
+            --navy: #000080;
+            --white: #ffffff;
+            --off-white: #f4f7f9;
+            --accent: #0000a0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--navy);
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--white);
+            border-bottom: 3px solid var(--navy);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            font-weight: 900;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            display:flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4d4dff;
+        }
+
+        /* Hero / Header Section */
+        .page-title {
+            background-color: var(--navy);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Content Sections */
+        section {
+            padding: 4rem 10%;
+        }
+
+        .section-heading {
+            padding-left: 15px;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+
+        /* Mission & Vision Layout */
+        .mv-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .card {
+            border: 1px solid var(--navy);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: var(--off-white);
+        }
+
+        .image-placeholder {
+            background-color: var(--off-white);
+            border: 0px dashed var(--navy);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #888;
+            overflow: hidden;
+        }
+
+        /* Team Section */
+        .team-intro {
+            background: var(--off-white);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 3rem;
+        }
+
+        .team-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .team-row {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .profile {
+            text-align: center;
+            width: 200px;
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background-color: var(--off-white);
+            border: 3px solid var(--navy);
+            margin: 0 auto 1rem;
+            overflow: hidden;
+            display: block;
+        }
+
+        /* FIX: Centers the head and ensures the image fills the circle properly */
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top; 
+        }
+
+        .profile h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .profile span {
+            font-size: 0.8rem;
+            font-weight: bold;
+            opacity: 0.8;
+            display: block;
+        }
+
+        /* Stakeholders */
+        .stakeholder-bar {
+            background-color: var(--off-white);
+            padding: 3rem 10%;
+            text-align: center;
+        }
+
+        .logo-flex {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+
+        .s-logo {
+            padding: 1rem;
+            border: 0px solid var(--navy);
+            min-width: 100px;
+            /*background: white;*/
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .s-logo img{
+            width:60px;
+            height:60px;
+        }
+        /* Footer */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 4rem 10% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+        }
+
+        .footer-box h5 {
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--white);
+            display: inline-block;
+        }
+
+        .footer-box p {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .image-group-1 {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mv-container { grid-template-columns: 1fr; }
+            .team-row { gap: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area"><img class="logo-image" src="logo.jpeg"><h3>BCVS</h3></div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" style="border-bottom: 2px solid var(--navy);">About</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+        <div class="user-icon">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+    </header>
+
+    <div class="page-title">
+        <h1>About Our Organization</h1>
+    </div>
+
+    <section>
+        <h2 class="section-heading">Mission & Vision</h2>
+        <div class="mv-container">
+            <div class="image-placeholder"><img class="image-group-1" src="headquater.jpeg"></div>
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>To be the trusted global leader in certificate verification, making every qualification easily verifiable and universally recognized.</p>
+            </div>
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>To offer a secure, quick, and easy-to-use service for verifying certificates worldwide ensuring integrity and trust in qualifications for all.</p>
+            </div>
+            <div class="image-placeholder"><img image-group-1 src="certificate.gif"></div>
+        </div>
+    </section>
+
+    <section style="background-color: #fafafa;">
+        <h2 class="section-heading">Meet The Team</h2>
+        <div class="team-intro">
+            <p>Our dedicated team works tirelessly to ensure the integrity of the certification ecosystem. From academic oversight to technical analysis, we are committed to excellence.</p>
+        </div>
+
+        <div class="team-grid">
+            <div class="team-row">
+                <div class="profile">
+                    <div class="profile-img"><img src="lecturer.jpeg"></div>
+                    <h4>REGAN MJ</h4>
+                    <span>DIRECTOR</span>
+                </div>
+            </div>
+
+            <div class="team-row">
+                <div class="profile">
+                    <div class="profile-img"><img src="dean.jpeg"></div>
+                    <h4>VERONIC</h4>
+                    <span>ACADEMIC REGISTRAR</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-img"><img src="regesitrar.jpeg"></div>
+                    <h4>ALEX K</h4>
+                    <span>SECRETARY</span>
+                </div>
+            </div>
+
+            <div class="team-row">
+                <div class="profile">
+                    <div class="profile-img"><img src="lecturer.jpeg"></div>
+                    <h4>LEON M</h4>
+                    <span>DEAN OF STUDENTS</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-img"><img src="dean.jpeg"></div>
+                    <h4>ESTER K</h4>
+                    <span>PROJECT MANAGER</span>
+                </div>
+                <div class="profile">
+                    <div class="profile-img"><img src="regesitrar.jpeg"></div>
+                    <h4>PATRICIA L</h4>
+                    <span>SYSTEM ANALYST</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="stakeholder-bar">
+        <h3>Our Trusted Stakeholders</h3>
+        <div class="logo-flex">
+            <div class="s-logo"><img src="logo.jpeg"></div>
+            <div class="s-logo"><img src="nche.jpeg"></div>
+            <div class="s-logo"><img src="me.jpeg"></div>
+            <div class="s-logo"><img src="mastercard.jpeg"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-box">
+                <h5>BCVS</h5>
+                <p>"Certificate Authenticity is our Pride"</p>
+                <p>Ensuring the future of academic integrity through digital innovation.</p>
+            </div>
+            <div class="footer-box">
+                <h5>Our Office</h5>
+                <p>19th Street, Kampala Road</p>
+                <p>P.O Box 1234, Kampala</p>
+                <p>Uganda, East Africa</p>
+            </div>
+            <div class="footer-box">
+                <h5>Contact & Support</h5>
+                <p>Email: cvsuganda@gmail.com</p>
+                <p>Tel: +256 700 613331</p>
+                <p>Social: WhatsApp | TikTok</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 BCVS. All rights reserved. Professional Certificate Verification Systems.
+        </div>
+    </footer>
+
+</body>
+</html>
